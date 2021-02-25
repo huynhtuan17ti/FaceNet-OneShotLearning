@@ -1,0 +1,88 @@
+Loss function :HardTripletLoss(
+  (ranking_loss): MarginRankingLoss()
+), optimizer: Adam (
+Parameter Group 0
+    amsgrad: False
+    betas: (0.9, 0.999)
+    eps: 1e-08
+    initial_lr: 0.0001
+    lr: 0.0001
+    weight_decay: 0
+)
+========== Start training ==========
+[TRAIN] Epoch: 0    loss: 7.303203343153
+[TEST] Epoch 0:
+* Threshold 0.5:
+       Precision score: 1.0000
+       Recall score: 0.8069
+       F1 score: 0.8932
+* Threshold 0.75:
+       Precision score: 1.0000
+       Recall score: 0.9259
+       F1 score: 0.9615
+* Threshold 1:
+       Precision score: 0.9992
+       Recall score: 0.9598
+       F1 score: 0.9791
+* Threshold 1.2:
+       Precision score: 0.9780
+       Recall score: 0.9827
+       F1 score: 0.9803
+### Epoch 0: cur_f1: 0.9803459119496856, best_f1: 0.9803459119496856 ###
+[TRAIN] Epoch: 1    loss: 0.1969954228401184
+[TEST] Epoch 1:
+* Threshold 0.5:
+       Precision score: 1.0000
+       Recall score: 0.8377
+       F1 score: 0.9117
+* Threshold 0.75:
+       Precision score: 0.9983
+       Recall score: 0.9094
+       F1 score: 0.9518
+* Threshold 1:
+       Precision score: 0.9892
+       Recall score: 0.9417
+       F1 score: 0.9649
+* Threshold 1.2:
+       Precision score: 0.9727
+       Recall score: 0.9827
+       F1 score: 0.9777
+### Epoch 1: cur_f1: 0.97765582124657, best_f1: 0.9803459119496856 ###
+[TRAIN] Epoch: 2    loss: 0.0039821481704711914
+[TEST] Epoch 2:
+* Threshold 0.5:
+       Precision score: 1.0000
+       Recall score: 0.8424
+       F1 score: 0.9145
+* Threshold 0.75:
+       Precision score: 1.0000
+       Recall score: 0.9157
+       F1 score: 0.9560
+* Threshold 1:
+       Precision score: 0.9951
+       Recall score: 0.9630
+       F1 score: 0.9788
+* Threshold 1.2:
+       Precision score: 0.9794
+       Recall score: 0.9756
+       F1 score: 0.9775
+### Epoch 2: cur_f1: 0.9787745294353223, best_f1: 0.9803459119496856 ###
+[TRAIN] Epoch: 3    loss: 0.0
+[TEST] Epoch 3:
+* Threshold 0.5:
+       Precision score: 1.0000
+       Recall score: 0.8432
+       F1 score: 0.9149
+* Threshold 0.75:
+       Precision score: 1.0000
+       Recall score: 0.9173
+       F1 score: 0.9568
+* Threshold 1:
+       Precision score: 0.9935
+       Recall score: 0.9638
+       F1 score: 0.9784
+* Threshold 1.2:
+       Precision score: 0.9787
+       Recall score: 0.9764
+       F1 score: 0.9775
+### Epoch 3: cur_f1: 0.9784, best_f1: 0.9803459119496856 ###

@@ -4,6 +4,7 @@ import torch.nn.functional as F
 import torch
 import timm
 from torchvision.models import resnet50
+from facenet_pytorch import InceptionResnetV1
 
 try:
     from torch.hub import load_state_dict_from_url
@@ -135,19 +136,33 @@ class EmbeddingFaceNet(nn.Module):
 
     def forward(self, x):
         output = self.model(x)
-        #output = F.normalize(x, p=2, dim=1)
+        output = F.normalize(x, p=2, dim=1)
         return output
+
+class EmbeddingMobileNetV2(nn.Module):
+    def __init__(self):
+        super().__init__()
+        self.model = torch.hub.load('pytorch/vision:v0.6.0', 'mobilenet_v2', pretrained=True)
+        #print(self.model.classifier)
+        n_features = self.model.classifier[1].in_features
+        self.model.classifier[1] = nn.Linear(n_features, 256)
+
+    def forward(self, x):
+        x = self.model(x)
+        output = F.normalize(x, p=2, dim=-1)
+        return output
+
 
 class EmbeddingMobileNetV3(nn.Module):
     def __init__(self):
         super().__init__()
         self.model = timm.create_model('tf_mobilenetv3_small_100', pretrained=True)
         n_features = self.model.classifier.in_features
-        self.model.classifier = nn.Linear(n_features, 256)
+        self.model.classifier = nn.Linear(n_features, 512)
 
     def forward(self, x):
         x = self.model(x)
-        output = F.normalize(x, p=2, dim=1)
+        output = F.normalize(x, p=2, dim=-1)
         return output
 
 
@@ -186,6 +201,6 @@ class TripletNet(nn.Module):
         return E1, E2, E3
 
 if __name__ == '__main__':
-    net = EmbeddingFaceNet()
+    net = EmbeddingMobileNetV2()
     print(net)
     #print(list(net.parameters()))

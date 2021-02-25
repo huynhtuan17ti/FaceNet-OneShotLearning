@@ -1,0 +1,195 @@
+Loss function :HardTripletLoss(
+  (ranking_loss): MarginRankingLoss()
+), optimizer: Adam (
+Parameter Group 0
+    amsgrad: False
+    betas: (0.9, 0.999)
+    eps: 1e-08
+    initial_lr: 0.001
+    lr: 0.001
+    weight_decay: 0
+)
+========== Start training ==========
+[TRAIN] Epoch: 0    loss: 31.08690631866455
+[TEST] Epoch 0:
+* Threshold 0.5:
+       Precision score: 0.1936
+       Recall score: 1.0000
+       F1 score: 0.3244
+* Threshold 0.75:
+       Precision score: 0.1936
+       Recall score: 1.0000
+       F1 score: 0.3244
+* Threshold 1:
+       Precision score: 0.1936
+       Recall score: 1.0000
+       F1 score: 0.3244
+* Threshold 1.2:
+       Precision score: 0.1936
+       Recall score: 1.0000
+       F1 score: 0.3244
+### Epoch 0: cur_f1: 0.3243865027956286, best_f1: 0.3243865027956286 ###
+[TRAIN] Epoch: 1    loss: 30.071050071716307
+[TEST] Epoch 1:
+* Threshold 0.5:
+       Precision score: 0.1936
+       Recall score: 1.0000
+       F1 score: 0.3244
+* Threshold 0.75:
+       Precision score: 0.1936
+       Recall score: 1.0000
+       F1 score: 0.3244
+* Threshold 1:
+       Precision score: 0.1936
+       Recall score: 1.0000
+       F1 score: 0.3244
+* Threshold 1.2:
+       Precision score: 0.1936
+       Recall score: 1.0000
+       F1 score: 0.3244
+### Epoch 1: cur_f1: 0.3243865027956286, best_f1: 0.3243865027956286 ###
+[TRAIN] Epoch: 2    loss: 30.04911334991455
+[TEST] Epoch 2:
+* Threshold 0.5:
+       Precision score: 0.1936
+       Recall score: 1.0000
+       F1 score: 0.3244
+* Threshold 0.75:
+       Precision score: 0.1936
+       Recall score: 1.0000
+       F1 score: 0.3244
+* Threshold 1:
+       Precision score: 0.1936
+       Recall score: 1.0000
+       F1 score: 0.3244
+* Threshold 1.2:
+       Precision score: 0.1936
+       Recall score: 1.0000
+       F1 score: 0.3244
+### Epoch 2: cur_f1: 0.3243865027956286, best_f1: 0.3243865027956286 ###
+[TRAIN] Epoch: 3    loss: 30.1402490234375
+[TEST] Epoch 3:
+* Threshold 0.5:
+       Precision score: 0.1936
+       Recall score: 1.0000
+       F1 score: 0.3244
+* Threshold 0.75:
+       Precision score: 0.1936
+       Recall score: 1.0000
+       F1 score: 0.3244
+* Threshold 1:
+       Precision score: 0.1936
+       Recall score: 1.0000
+       F1 score: 0.3244
+* Threshold 1.2:
+       Precision score: 0.1936
+       Recall score: 1.0000
+       F1 score: 0.3244
+### Epoch 3: cur_f1: 0.3243865027956286, best_f1: 0.3243865027956286 ###
+[TRAIN] Epoch: 4    loss: 29.979542541503907
+[TEST] Epoch 4:
+* Threshold 0.5:
+       Precision score: 0.1936
+       Recall score: 1.0000
+       F1 score: 0.3244
+* Threshold 0.75:
+       Precision score: 0.1936
+       Recall score: 1.0000
+       F1 score: 0.3244
+* Threshold 1:
+       Precision score: 0.1936
+       Recall score: 1.0000
+       F1 score: 0.3244
+* Threshold 1.2:
+       Precision score: 0.1936
+       Recall score: 1.0000
+       F1 score: 0.3244
+### Epoch 4: cur_f1: 0.3243865027956286, best_f1: 0.3243865027956286 ###
+[TRAIN] Epoch: 5    loss: 30.51107116699219
+[TEST] Epoch 5:
+* Threshold 0.5:
+       Precision score: 0.1936
+       Recall score: 1.0000
+       F1 score: 0.3244
+* Threshold 0.75:
+       Precision score: 0.1936
+       Recall score: 1.0000
+       F1 score: 0.3244
+* Threshold 1:
+       Precision score: 0.1936
+       Recall score: 1.0000
+       F1 score: 0.3244
+* Threshold 1.2:
+       Precision score: 0.1936
+       Recall score: 1.0000
+       F1 score: 0.3244
+### Epoch 5: cur_f1: 0.3243865027956286, best_f1: 0.3243865027956286 ###
+Loss function :HardTripletLoss(
+  (ranking_loss): MarginRankingLoss()
+), optimizer: Adam (
+Parameter Group 0
+    amsgrad: False
+    betas: (0.9, 0.999)
+    eps: 1e-08
+    initial_lr: 0.01
+    lr: 0.01
+    weight_decay: 0
+)
+========== Start training ==========
+[TRAIN] Epoch: 0    loss: 30.617826538085936
+[TEST] Epoch 0:
+* Threshold 0.5:
+       Precision score: 0.1936
+       Recall score: 1.0000
+       F1 score: 0.3244
+* Threshold 0.75:
+       Precision score: 0.1936
+       Recall score: 1.0000
+       F1 score: 0.3244
+* Threshold 1:
+       Precision score: 0.1936
+       Recall score: 1.0000
+       F1 score: 0.3244
+* Threshold 1.2:
+       Precision score: 0.1936
+       Recall score: 1.0000
+       F1 score: 0.3244
+### Epoch 0: cur_f1: 0.3243865027956286, best_f1: 0.3243865027956286 ###
+[TRAIN] Epoch: 1    loss: 30.03610897064209
+[TEST] Epoch 1:
+* Threshold 0.5:
+       Precision score: 0.1936
+       Recall score: 1.0000
+       F1 score: 0.3244
+* Threshold 0.75:
+       Precision score: 0.1936
+       Recall score: 1.0000
+       F1 score: 0.3244
+* Threshold 1:
+       Precision score: 0.1936
+       Recall score: 1.0000
+       F1 score: 0.3244
+* Threshold 1.2:
+       Precision score: 0.1936
+       Recall score: 1.0000
+       F1 score: 0.3244
+### Epoch 1: cur_f1: 0.3243865027956286, best_f1: 0.3243865027956286 ###
+[TRAIN] Epoch: 2    loss: 30.032423934936524
+[TEST] Epoch 2:
+* Threshold 0.5:
+       Precision score: 0.1936
+       Recall score: 1.0000
+       F1 score: 0.3244
+* Threshold 0.75:
+       Precision score: 0.1936
+       Recall score: 1.0000
+       F1 score: 0.3244
+* Threshold 1:
+       Precision score: 0.1936
+       Recall score: 1.0000
+       F1 score: 0.3244
+* Threshold 1.2:
+       Precision score: 0.1936
+       Recall score: 1.0000
+       F1 score: 0.3244
+### Epoch 2: cur_f1: 0.3243865027956286, best_f1: 0.3243865027956286 ###

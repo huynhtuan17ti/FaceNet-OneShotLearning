@@ -9,7 +9,7 @@ import os
 from tqdm import tqdm
 import random
 from custom_utils import prepare_dataloader, prepare_transforms
-from models import EmbeddingMobileNetV3, EmbeddingFaceNet, TripletNet
+from models import EmbeddingMobileNetV3, EmbeddingMobileNetV2, EmbeddingFaceNet, TripletNet
 import time
 from torch.autograd import Variable
 from losses import TripletLoss, HardTripletLoss
@@ -25,7 +25,8 @@ LOGGER = init_logger()
 
 def get_model():
     #embeddingNet = EmbeddingFaceNet()
-    embeddingNet = InceptionResnetV1(pretrained='vggface2').eval()
+    #embeddingNet = InceptionResnetV1(pretrained='vggface2').eval()
+    embeddingNet = EmbeddingMobileNetV3()
     if hard_triplet:
         return embeddingNet
     model = TripletNet(embeddingNet)
@@ -118,13 +119,13 @@ def valid_one_epoch(epoch, model, loss_fn, valid_loader):
                 if predict != label and label == True:
                     false_negative[i] += 1
             
-    
+    esp = 1e-9
     max_f1 = 0
     LOGGER.info('[TEST] Epoch {}:'.format(epoch))
     for i, threshold in enumerate(thresholds):
-        precision = true_positive[i]/(true_positive[i] + false_positive[i])
-        recall = true_positive[i]/(true_positive[i] + false_negative[i])
-        f1 = 2*(precision*recall)/(precision + recall)
+        precision = true_positive[i]/(true_positive[i] + false_positive[i] + esp)
+        recall = true_positive[i]/(true_positive[i] + false_negative[i] + esp)
+        f1 = 2*(precision*recall)/(precision + recall + esp)
         max_f1 = max(max_f1, f1)
         LOGGER.info('* Threshold {}:'.format(threshold))
         LOGGER.info('       Precision score: {:.4f}'.format(precision))
@@ -144,10 +145,10 @@ if __name__ == '__main__':
         loss_fn = TripletLoss()
     
     model = get_model().cuda()
-    optimizer = torch.optim.Adam(filter(lambda p: p.requires_grad, model.parameters()), lr = 0.0001)
+    optimizer = torch.optim.Adam(filter(lambda p: p.requires_grad, model.parameters()), lr = 0.001)
 
     scheduler = torch.optim.lr_scheduler.MultiStepLR(optimizer, milestones=[5, 10, 15, 20, 25, 30, 70, 80], 
-                                                     gamma=0.3, last_epoch=-1, verbose=True)
+                                                     gamma=0.1, last_epoch=-1, verbose=True)
 
     LOGGER.info('Loss function :{}, optimizer: {}'.format(loss_fn, optimizer))
     LOGGER.info('========== Start training =========='.format(config.n_shot))

@@ -134,6 +134,10 @@ def valid_one_epoch(epoch, model, loss_fn, valid_loader):
 
     return max_f1
 
+def test(optimizer):
+    optimizer.zero_grad()
+    print('fuck')
+
 if __name__ == '__main__':
     train_transforms, valid_transforms = prepare_transforms()
     train_loader, valid_loader = prepare_dataloader(hard_triplet = hard_triplet, train_transforms = train_transforms, valid_transforms = valid_transforms)
@@ -146,6 +150,7 @@ if __name__ == '__main__':
     
     model = get_model().cuda()
     optimizer = torch.optim.Adam(filter(lambda p: p.requires_grad, model.parameters()), lr = 0.001)
+    test(optimizer)
 
     scheduler = torch.optim.lr_scheduler.MultiStepLR(optimizer, milestones=[5, 10, 15, 20, 25, 30, 70, 80], 
                                                      gamma=0.1, last_epoch=-1, verbose=True)

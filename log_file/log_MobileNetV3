@@ -580,3 +580,15 @@ Parameter Group 0
        Recall score: 0.8779
        F1 score: 0.7199
 ### Epoch 29: cur_f1: 0.7549019602843728, best_f1: 0.7615541917291393 ###
+Loss function :HardTripletLoss(
+  (ranking_loss): MarginRankingLoss()
+), optimizer: Adam (
+Parameter Group 0
+    amsgrad: False
+    betas: (0.9, 0.999)
+    eps: 1e-08
+    initial_lr: 0.001
+    lr: 0.001
+    weight_decay: 0
+)
+========== Start training ==========
